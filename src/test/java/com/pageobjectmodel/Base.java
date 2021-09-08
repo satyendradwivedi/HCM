@@ -44,16 +44,16 @@ public class Base {
 		
 		if(br.equals("chrome"))
 		{    //Jenkins Linux configuration
-			/*System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			ChromeOptions opt = new ChromeOptions();
 			opt.setBinary("/usr/bin/google-chrome");  //chrome binary location specified here
 			opt.addArguments("--headless");
 			opt.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
 			opt.setExperimentalOption("useAutomationExtension", false);
 			driver = new ChromeDriver(opt);
-			driver.get(baseUrl);*/
+			driver.get(baseUrl);
 			//local system configuration
-		System.setProperty("webdriver.chrome.driver", rcg.getChrome());
+		/*System.setProperty("webdriver.chrome.driver", rcg.getChrome());
 		WebDriverManager.chromedriver().setup();
 		
 		
@@ -62,7 +62,7 @@ public class Base {
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		logger.info("Launching the browser");
-		driver.get(baseUrl);
+		driver.get(baseUrl);*/
 		logger.info("Launching the application");
 		}
 		else
