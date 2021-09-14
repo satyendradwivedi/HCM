@@ -9,8 +9,11 @@
     <classes>
       <class name="com.testcases.LocationTest">
         <methods>
+          <include name="gettitleLocation"/>
           <include name="updatelocation"/>
+          <include name="valLocation"/>
           <include name="setUp"/>
+          <include name="newlocation"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.testcases.LocationTest -->

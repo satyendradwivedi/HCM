@@ -72,17 +72,17 @@ public void newlocation() throws InterruptedException, IOException
 	driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 	
 	logger.info("Enter all the mandatory information..");
-	lc.locationname("Ameerpet");
+	lc.locationname("Noida");
 	Thread.sleep(4000);
-	lc.locationdesc("IT HUB IN Hyderabad");
+	lc.locationdesc("Noida Sector 61");
 	Thread.sleep(4000);
 	lc.locationcode("AM");
 	Thread.sleep(4000);
-	lc.ladderss("Hyderabaad");
+	lc.ladderss("Noida");
 	Thread.sleep(4000);
-	lc.lcity("Hyderabaad");
+	lc.lcity("Noida");
 	Thread.sleep(4000);
-	lc.lstate("Telangna");
+	lc.lstate("U.P");
 	Thread.sleep(4000);
 	lc.lcountry("India");
 	Thread.sleep(4000);
@@ -90,11 +90,11 @@ public void newlocation() throws InterruptedException, IOException
 	lc.save();
 	logger.info("New Location has been creates");
 	Thread.sleep(4000);
-	driver.findElement(By.xpath("//*[@id=\"DataTables_Table_0_filter\"]/label/input")).sendKeys("Ameerpet");
-	String loc=driver.findElement(By.xpath("//a[contains(text(),'Ameerpet')]")).getText();
+	driver.findElement(By.xpath("//*[@id=\"DataTables_Table_0_filter\"]/label/input")).sendKeys("Noida Sector 61");
+	String loc=driver.findElement(By.xpath("//a[contains(text(),'Noida Sector 61')]")).getText();
 	System.out.println(loc);
 	
-	if(driver.findElement(By.xpath("//a[contains(text(),'Ameerpet')]")).getText().equalsIgnoreCase("Ameerpet"))
+	if(driver.findElement(By.xpath("//a[contains(text(),'Noida Sector 61')]")).getText().equalsIgnoreCase("Noida Sector 61"))
 	{
 	    Assert.assertTrue(true);
 	}
@@ -113,13 +113,13 @@ public void newlocation() throws InterruptedException, IOException
 		
 		
 		
-		driver.findElement(By.xpath("//a[contains(text(),'Ameerpet')]")).click();
+		driver.findElement(By.xpath("//a[contains(text(),'Noida Sector 61')]")).click();
 		Thread.sleep(4000);
 		logger.info("Open existing location");
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//input[@id='locationName']")).clear();
 		Thread.sleep(4000);
-		driver.findElement(By.xpath("//input[@id='locationName']")).sendKeys("IT Hub");
+		driver.findElement(By.xpath("//input[@id='locationName']")).sendKeys("Noida Sector 71");
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/form/div[8]/button")).click();
 		logger.info("Updated existing location");
@@ -127,7 +127,7 @@ public void newlocation() throws InterruptedException, IOException
 		
 		
 		
-		if(driver.findElement(By.xpath("//a[contains(text(),'IT Hub')]")).getText().equalsIgnoreCase("IT Hub"))
+		if(driver.findElement(By.xpath("//a[contains(text(),'IT Hub')]")).getText().equalsIgnoreCase("Noida Sector 71"))
 		{
 		    Assert.assertTrue(true);
 		}

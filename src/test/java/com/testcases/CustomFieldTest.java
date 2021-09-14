@@ -80,19 +80,19 @@ public class CustomFieldTest extends Base {
 		cf.orgsetUp();
 		cf.customfieldlink();
 		cf.clickOnNewCustomButton();
-		cf.setCName("User ID");
+		cf.setCName("SSF");
 		logger.info("Entering Custom Name");
 		cf.customFieldType();
 		cf.customFieldTObjypeuser();
 		logger.info("Selecting Location of Custom Field User ");
 		cf.saveCustom();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("//input[@type='search']")).sendKeys("User ID");// Searching the locati by
+		driver.findElement(By.xpath("//input[@type='search']")).sendKeys("SSF");// Searching the locati by
 		logger.info("Searching custom field");
 		// entering values into
 		// search textbox
-	     String search = "User ID";
-	     Assert.assertEquals(search, "User ID");
+	     String search = "SSF";
+	     Assert.assertEquals(search, "SSF");
 	} 
 /*@Test(priority=4,description="account custom field")
 	
