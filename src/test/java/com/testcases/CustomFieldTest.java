@@ -23,6 +23,7 @@ public class CustomFieldTest extends Base {
 	public void gettitleCustomField() throws InterruptedException, IOException
 	{
 		driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
+
 		LoginPage lp1=new LoginPage(driver);
 		lp1.setEmail(emailid);
 		Thread.sleep(4000);
@@ -68,7 +69,15 @@ public class CustomFieldTest extends Base {
 	s_assert.assertEquals(valmessage, "Please fill out this field.");
 	System.out.println("Validation message:" +valmessage);
 	s_assert.assertAll();
+	if(valmessage.equalsIgnoreCase("Please fill out this field."))
+	{
+		Assert.assertTrue(true);
+	}
 	
+	else 
+	{
+		Assert.assertFalse(true);
+	}
 }
     @Test(priority=3,description="user custom field text")
 	
@@ -80,21 +89,21 @@ public class CustomFieldTest extends Base {
 		cf.orgsetUp();
 		cf.customfieldlink();
 		cf.clickOnNewCustomButton();
-		cf.setCName("SSF");
+		cf.setCName("UID");
 		logger.info("Entering Custom Name");
 		cf.customFieldType();
 		cf.customFieldTObjypeuser();
 		logger.info("Selecting Location of Custom Field User ");
 		cf.saveCustom();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("//input[@type='search']")).sendKeys("SSF");// Searching the locati by
+		driver.findElement(By.xpath("//input[@type='search']")).sendKeys("UID");// Searching the locati by
 		logger.info("Searching custom field");
 		// entering values into
 		// search textbox
-	     String search = "SSF";
-	     Assert.assertEquals(search, "SSF");
+	     String search = "UID";
+	     Assert.assertEquals(search, "UID");
 	} 
-/*@Test(priority=4,description="account custom field")
+@Test(priority=4,description="account custom field")
 	
 	public void accountcustomfield() throws InterruptedException
 	{
@@ -108,6 +117,11 @@ public class CustomFieldTest extends Base {
 		cf.customFieldTObjypeaccount();
 		logger.info("Selecting Location of Custom Field Account");
 		cf.saveCustom();
+		logger.info("Searching custom field");
+		// entering values into
+		// search textbox
+	     String search = "Account Number";
+	     Assert.assertEquals(search, "Account Number");
 	}
      @Test(priority=5,description="announcement custom field")
 
@@ -123,6 +137,11 @@ public class CustomFieldTest extends Base {
 	cf.customFieldTObjypeannouncement();
 	logger.info("Selecting Location of Custom Field announcement ");
 	cf.saveCustom();
+	logger.info("Searching custom field");
+	// entering values into
+	// search textbox
+     String search = "announcement";
+     Assert.assertEquals(search, "announcement");
 }
      @Test(priority=6,description="Asset custom field")
 
@@ -138,6 +157,11 @@ public class CustomFieldTest extends Base {
 	cf.customFieldTObjypeasset();
 	logger.info("Selecting Location of Custom Field Asset ");
 	cf.saveCustom();
+	logger.info("Searching custom field");
+	// entering values into
+	// search textbox
+     String search = "System Detail";
+     Assert.assertEquals(search, "System Detail");
 }
      @Test(priority=7,description="Benefits custom field")
 
@@ -214,6 +238,6 @@ public class CustomFieldTest extends Base {
     	 Assert.assertEquals(search, "System Detail");// validating search results by assertion by actual and expected
     
 // results
-	} */
+	} 
 
 }

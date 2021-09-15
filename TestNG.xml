@@ -11,10 +11,10 @@
   <parameter name="browsers" value="chrome"></parameter>
   
    <classes>
-     <class name="com.testcases.LoginTest001"></class>
+     <!--<class name="com.testcases.LoginTest001"></class>-->
      <class name="com.testcases.CustomFieldTest"></class>
      <!--<class name="com.testcases.UserViewTest"></class>-->
-     <class name="com.testcases.LocationTest"></class>
+    <!-- <class name="com.testcases.LocationTest"></class>-->
      
      
     
